@@ -1,0 +1,17 @@
+1) /* for generate stong named key file command will be as below*/
+	cnd=> sn -k key.snk
+
+2) /* to create strong named assembly calc.dll file command will be as below */
+	cmd=>csc /t:library /keyfile:key.snk Calc.cs
+
+3) /* deploy Calc.dll to GAC command will be as below */
+	cmd=>gacutil –i Calc.dll
+
+4) /* to create new version of Calc.cs file  will be as below*/
+	Add below code at begginning of code
+		using System.Reflection;
+		[assembly: AssemblyVersion("1.0.0.0")]
+
+5) /* to create new version calc.dll and upload to GAC command will be as below*/
+	cmd=> csc /t:library /keyfile:key.snk NewCalc.cs
+	cmd=>gacutil –i NewCalc.dll
