@@ -1,0 +1,8 @@
+1) /* for addition.netmodule file command will be as below */
+	cmd=> csc /t: module addition.cs
+
+2) /* for multiplication.netmodule file command will be as below*/
+	cmd=> csc /t: module multiplication.cs
+
+3)  /* to combine both netmodule into single DLL file names Calc.dll command will be as below */
+	cmd=> csc /t: library /out:calc.dll /addmodule:addition.netmodule /addmodule:multiplication.netmodule
